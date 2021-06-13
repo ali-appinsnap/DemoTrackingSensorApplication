@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="my_dialog_theme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="colorAccent">?colorOnBackground
+        </item>                   <!--header background-->
+        <item name="android:windowBackground">@color/white
+        </item>     <!--calendar background--> <!--selected day-->
+        <item name="android:textColorPrimary">?colorOnBackground</item> <!--days of the month-->
+        <item name="android:textColorSecondary">?colorOnBackground</item>    <!--days of the week-->
+    </style>
+</resources>

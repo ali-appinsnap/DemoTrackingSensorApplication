@@ -1,0 +1,173 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.example.demotrackingsensorapplication"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding.enabled = true
+
+    androidExtensions {
+        experimental = true
+    }
+
+}
+
+//stateOfArt
+
+//def lifeCycleExtensionVersion = '1.1.1'
+def supportVersion = '28.0.0'
+def roomVersion = '2.2.5'
+def preferencesVersion = '1.0.0'
+def rxJavaVersion = '2.1.1'
+def navVersion = '2.2.2'
+def retrofitVersion = '2.8.1'
+def glideVersion = '4.11.0'
+def lifecycle_version = "2.2.0"
+def daggerVersion = '2.28'
+def mokitoVersion = '2.11.0'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //Multidexing
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //support Lib
+    implementation "com.android.support:design:$supportVersion"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+//    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    //Room Database
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    //Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5"
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+
+    //Google Material
+//    implementation "com.google.android.material:material:1.0.0"
+    implementation 'com.google.android.material:material:1.2.1'
+
+    //Google Maps
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+    //google Vision
+    implementation 'com.google.android.gms:play-services-vision:15.0.1'
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
+    //RxJava and RxAndroid
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+
+    //Glide for images
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
+    //Palette for UI
+    implementation "com.android.support:palette-v7:$supportVersion"
+
+    //Jetpack Preferences
+    implementation "androidx.preference:preference:$preferencesVersion"
+
+    //dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    //noinspection OutdatedLibrary
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    //mokito
+    testImplementation 'androidx.test:core:1.0.0'
+    // Optional -- Mockito framework
+    testImplementation "org.mockito:mockito-core:$mokitoVersion"
+    testImplementation "android.arch.core:core-testing:1.1.1"
+    kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    //Third Party Libraries
+    //Welcome Slider
+    implementation 'com.github.smarteist:autoimageslider:1.4.0-appcompat'
+    //PinView
+    /*implementation 'io.github.chaosleung:pinview:1.4.4'
+    implementation 'com.github.GoodieBag:Pinview:v1.4'*/
+    implementation 'com.github.darshan-miskin:PinView-Android:v1.1.8'
+    //sdp
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    //circle imageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    /*  //Seek bar Indicator
+      implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+      // enhanced version
+     implementation 'com.xw.repo:bubbleseekbar:3.20'
+      // implementation 'com.xw.repo:bubbleseekbar:${LATEST_VERSION}'*/
+
+    // sample:
+    implementation 'com.github.Jay-Goo:RangeSeekBar:v3.0.0'
+//    implementation 'com.github.Jay-Goo:RangeSeekBar:Release Version'
+    implementation "com.github.skydoves:progressview:1.1.1"
+    api 'com.otaliastudios:cameraview:2.7.0'
+//OTP
+    implementation 'com.github.stfalcon:smsverifycatcher:0.3.2'
+    //EditText
+//    implementation 'com.github.simformsolutions:SSCustomEditTextOutLineBorder:1.0.10'
+    implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
+
+    implementation 'com.agrawalsuneet.androidlibs:dotsloader:1.4'
+}

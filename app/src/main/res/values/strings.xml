@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DemoTrackingSensorApplication</string>
+    <string name="tripsLocationServiceLabel">Location Service</string>
+    <string name="activity_in_vehicle">Driving</string>
+    <string name="activity_in_vehicle_not">Not Driving</string>
+    <string name="activity_on_bicycle">On Bicycle</string>
+    <string name="activity_on_foot">On Foot</string>
+    <string name="activity_running">Running</string>
+    <string name="activity_still">Still</string>
+    <string name="activity_tilting">Tilting</string>
+    <string name="activity_walking">walking</string>
+    <string name="activity_unknown">Unknown</string>
+
+</resources>
